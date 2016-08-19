@@ -1,0 +1,126 @@
+doctype html
+html(lang="en")
+  head
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    meta(http-equiv="content-type", content="text/html; charset=utf-8")
+    title Cozy - Sync
+    link(rel="stylesheet", href="/fonts/fonts.css")
+    link(rel="stylesheet", href="stylesheets/app.css")
+    link(rel="icon", type="image/x-icon", href="favicon.ico")
+    link(rel="icon", type="image/png", href="favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="favicon-16x16.png", sizes="16x16")
+    link(rel="icon", type="image/png", href="favicon-32x32.png", sizes="32x32")
+
+  body
+    #content
+
+      .content-block
+        h1 #{webdav}
+        p
+          | #{standard}
+        p
+          | #{tutorials}
+          ul
+            li
+              a(target="_blank", href="https://docs.cozy.io/en/mobile/contacts.html") #{contactsTutorial}
+            li
+              a(target="_blank", href="https://docs.cozy.io/en/mobile/calendar.html") #{calendarTutorial}
+
+      .content-block
+        h1 #{server}
+        p
+          | #{further}
+
+        .url.credentials
+          p
+            | #{log}:&nbsp;
+            span#login-span #{login}
+          p
+            | password:&nbsp;
+            span#password-span
+            button#show-password #{show}
+            button#hide-password #{hide}
+
+          button#generate-btn Reset password
+        - var dDomain = (domain == '') ? 'your.cozy.url' : domain
+
+      .content-block
+        h1 #{calendar}
+        p
+          | #{client}
+
+        .content-tab
+          .menu-tab
+            h2.tab.caldav.selected(data-device="ios") iOS / OS X
+            h2.tab.caldav(data-device="android") Android
+            h2.tab.caldav(data-device="thunderbird") Thunderbird (Lightning)
+
+          .caldavconf(data-device="ios")
+            p
+              | #{serverField} :
+            p#iosuri.url
+              | #{dDomain}/public/sync/principals/me
+
+          .caldavconf(data-device="android")
+            p
+              | #{android}
+            p.url
+              | https://#{dDomain}/public/sync/principals/me/
+
+          .caldavconf(data-device="thunderbird")
+            p
+              | #{select}&nbsp;
+              select#calendar
+                option#placeholder(value="") -
+                - each c in calendars
+                  option(value=encodeURIComponent(c))= c
+
+            p
+              | #{url}
+            p#thunderbirduri.url
+
+      .content-block
+        h1 #{contacts}
+        p
+          | #{client}
+
+        .content-tab
+          .menu-tab
+            h2.tab.carddav.selected(data-device="ios") iOS / OS X
+            h2.tab.carddav(data-device="android") Android
+            h2.tab.carddav(data-device="thunderbird") Thunderbird
+
+          .carddavconf(data-device="ios")
+            p
+              | #{serverField} :
+            p.url
+              | #{dDomain}/public/sync
+
+          .carddavconf(data-device="android")
+            p
+              | #{android}
+            p.url
+              | https://#{dDomain}/public/sync/principals/me/
+
+          .carddavconf(data-device="thunderbird")
+            p
+              | #{thunderbird}
+            p.url
+              | https://#{dDomain}/public/sync/addressbooks/me/all-contacts/
+
+      .content-block
+        h1 #{files}
+        p
+          | #{file}
+
+      .content-block
+        h1 #{troubleshouting}
+        p
+          | #{problems}&nbsp;
+          a(target="_blank", href="https://github.com/mycozycloud/cozy-webdav/issues") #{github}!
+
+    script.
+      window.password = "#{token}";
+    script(src="javascripts/vendor.js")
+    script(src="javascripts/app.js", onload="require('initialize');")
+

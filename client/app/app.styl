@@ -1,0 +1,163 @@
+shadow()
+    -moz-box-shadow arguments
+    -webkit-box-shadow arguments
+    box-shadow arguments
+
+text-shadow()
+    -moz-text-shadow arguments
+    -webkit-text-shadow arguments
+    text-shadow arguments
+
+blue = #34A6FF
+orange = #FE8800
+
+html, body
+    height 100%
+    width 100%
+    padding 0
+    margin 0
+    box-sizing border-box
+
+html, body, h1, p
+    box-sizing border-box
+
+body
+    background #F4F4F4
+    font-family 'Source Sans Pro', sans-serif
+
+a
+    color blue
+
+    &:hover
+        color orange
+
+#show-password
+#hide-password
+    display inline-block
+    margin-left 1em
+
+#hide-password
+    display none
+
+
+h1
+h2
+h3
+    font-family 'Maven Pro', sans-serif
+
+h1
+    margin 0
+    padding 0.7rem 1rem
+    background #EEE
+    border-bottom 1px solid #DDD
+    border-radius 8px 8px 0 0
+    font-size 1.6em
+    font-weight normal
+    color #333
+
+h2
+    margin 0
+    padding 0.4em 0.6em
+    color #555
+    font-size 1.2em
+
+    &.tab
+        display inline-block
+        position relative
+
+        &.selected
+            color blue
+            cursor pointer
+
+        &:hover
+            color orange
+            cursor pointer
+
+.caldavconf
+.carddavconf
+    display block
+
+.caldavconf ~ .caldavconf
+.carddavconf ~ .carddavconf
+    display none
+
+p
+    margin 1em
+    font-size 1em
+    line-height 1.4
+
+#content
+    padding 1em
+    margin auto
+    max-width 40em
+
+// block individuals
+.content-block
+    margin-top 2em
+    background #FBFBFB
+    border 1px solid #DDD
+    border-radius 8px
+
+    ul li
+        color blue
+
+        a
+            text-decoration none
+            line-height 1.8
+
+    &:last-child
+        margin-bottom 4em
+
+// block with tabs
+.content-tab
+    margin 1em
+    padding-bottom 0.1em
+    border-left 2px solid #DDD
+
+.menu-tab
+    border-bottom 2px solid #DDD
+
+button
+    padding 0.3em 0.8em
+    cursor pointer
+    background blue
+    border 1px solid blue
+    box-shadow none
+    border-radius 3px
+    font-family 'Source Sans Pro', sans-serif
+    color white
+    font-size 0.8em
+    text-shadow none
+    outline none
+
+    &:hover
+        background orange
+        border 1px solid orange
+        color white
+
+    &:active
+        background orange - 3%
+        border 1px solid orange
+        shadow 1px 3px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.0)
+        color white
+
+.url
+    padding 0.8em 1em
+    background #555
+    border-radius 5px
+    color #FFF
+    font-size 1.05em
+    word-wrap break-word
+
+.credentials
+    margin 1em
+    padding 1em
+
+    &.url
+        word-wrap normal
+
+    p
+        margin 0 0 0.5em
+
+    span
+        font-weight bold
