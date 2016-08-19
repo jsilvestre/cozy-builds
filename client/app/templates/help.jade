@@ -1,0 +1,37 @@
+.mod.pa2.help-section
+    h2= t('help community title')
+    .line
+        a(href="https://forum.cozy.io", target="_blank")
+            i.icon-small.forum
+            span= t('help forum title')
+        a(href="https://webchat.freenode.net/?channels=cozycloud", target="_blank")
+            i.icon-small.irc
+            span= t('help IRC title')
+        a(href="https://github.com/cozy", target="_blank")
+            i.icon-small.github
+            span= t('help github title')
+
+.mod.pa2.help-section
+    h2= t('help support title')
+    .line
+        a(href="mailto:support@cozycloud.cc")
+            i.icon-small.contact
+            span= t('help email title')
+        a(href="https://twitter.com/intent/tweet?text=@mycozycloud%20", target="_blank")
+            i.icon-small.twitter
+            span= t('help twitter title')
+        a(href="https://cozy.io", target="_blank")
+            i.icon-small.doc
+            span= t('help documentation title')
+
+.mod.pa2.help-section
+    h2= t('help direct title')
+    textarea#send-message-textarea.mt2.w100
+    p.help-logs
+        input#send-message-logs(type='checkbox', checked='checked')
+        label(for='send-message-logs')= t('help send logs')
+    button#send-message-button.btn.send-message-btn
+        .fa.fa-paper-plane
+        span= t('help send message action')
+    #send-message-error.alert.main-alert.alert-error.w100= t('send message error')
+    #send-message-success.alert.main-alert.alert-success.w100= t('send message success')

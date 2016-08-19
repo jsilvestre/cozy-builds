@@ -1,0 +1,51 @@
+#no-app-message.w600
+    .darkbg#start-title.clearfix
+        a(href="https://cozy.io")
+            img.logo(src="img/happycloud.png")
+        p.biggest= t('welcome to your cozy')
+
+    p.bigger!= t('you have no apps')
+    p.bigger!= t('noapps.customize your cozy', {account: '#account', appstore: '#applications'})
+
+#app-list
+    section#apps-favorite.line
+        h2= t('home section favorites')
+        div.application-container
+    section#apps-leave.line
+        h2= t('home section leave')
+        div.application-container
+    section#apps-main.line
+        h2= t('home section main')
+        div.application-container
+    section#apps-productivity.line
+        h2= t('home section productivity')
+        div.application-container
+    section#apps-data.line
+        h2= t('home section data management')
+        div.application-container
+    section#apps-watch.line
+        h2= t('home section personal watch')
+        div.application-container
+    section#apps-misc.line
+        h2= t('home section misc')
+        div.application-container
+    section#apps-platform.line.show
+        h2= t('home section platform')
+        div.application-container
+            div.application.mod.w360-33.w640-25.full-20.left.platform-app
+                .application-inner
+                    a(href="#applications")
+                        img.icon(src="img/apps/store.svg")
+                        p.app-title= t('app store')
+
+            div.application.mod.w360-33.w640-25.full-20.left.platform-app
+                .application-inner
+                    a(href="#config-applications")
+                        img.icon.svg(src="img/apps/my-apps.svg")
+                        p.app-title= t('app status')
+
+            div.application.mod.w360-33.w640-25.full-20.left.platform-app
+                .application-inner(href="#account")
+                    a(href="#account")
+                        img.icon.svg(src="img/apps/settings.svg")
+                        p.app-title= t('settings')

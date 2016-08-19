@@ -1,0 +1,365 @@
+
+@import 'nib'
+
+@import 'base/_colors'
+@import 'base/_grid'
+@import 'base/_alerts'
+@import 'base/_buttons'
+@import 'base/_form'
+@import 'base/_icons'
+@import 'base/_reset'
+
+@import 'components/_modal'
+@import 'components/_notifications'
+@import 'components/_desktop'
+@import 'components/_help'
+@import 'components/_settings'
+@import 'components/_status'
+@import 'components/_store'
+@import 'components/_object-picker'
+
+
+
+.home-body
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items stretch
+    overflow hidden
+    box-sizing border-box
+    width 100%
+    height 100%
+    padding 36px 0 0 0
+    margin 0
+
+#app-frames
+    height 100%
+
+#content
+    height 100%
+    overflow auto
+    transition 0.6s background-image ease-in-out
+    background-position center
+    background-repeat no-repeat
+    background-size cover
+
+#home-content
+    display flex
+    min-height 100%
+
+    & > section
+        flex 1
+
+// related to store, status, settings and help pages
+.platform-section
+#account-view #account-form
+    min-height calc(100vh - 36px)
+    padding (30/16)em
+    background-color white
+
+
+// navbar
+// ========================================================
+.navbar
+    position fixed
+    background grey-08
+    z-index 1500
+    top 0
+    width 100%
+    height 36px
+    padding 0
+
+#menu-applications-container
+    margin auto
+    max-width 50%
+    text-align center
+    color grey-03
+    text-transform uppercase
+
+    #current-application
+        line-height 36px
+
+
+// Status - Config device
+// Everything below is probably useless
+// TODO => remove all of this code
+// ========================================================
+.config-device
+    strong
+    .mod
+        display inline-block
+
+    .mod.left
+        margin 0
+
+    .md-header
+        background transparent
+
+    .md-footer
+        padding 0
+
+        .btn
+            font-weight normal
+
+    &:hover
+        .dataLine
+            text-shadow none
+
+        .docTypeLine
+            text-shadow none
+
+
+// Responsive
+// ========================================================
+@media (max-width 1200px)
+    #account-view
+    #config-applications-view
+        .w50
+            width 100%
+            padding 0
+
+        .personalisation
+            margin-bottom (60/16)em
+
+
+@media (max-width 850px)
+    #applications-view
+        padding 0 (10/16)em
+        margin-bottom (20/16)em
+
+    #market-view
+        span.comment
+            // hide desciption about who developed the app
+            display none
+
+    dialog
+        width 96vw
+
+
+@media (max-width 800px)
+    #config-applications-view
+        .mod.w25
+        .mod.w75
+        .mod.w33
+        .mod.w66
+        .mod.w40
+        .mod.w60
+        .mod.w50
+        .mod.w30
+        .mod.w70
+            width 100%
+
+    #app-list section
+        margin-top 1em
+
+    .back-button
+        span
+            display none
+
+    .pa2
+        padding (10/16)em
+
+    #config-applications-view
+        .w50
+            padding (10/16)em
+
+    .platform-section
+        padding (10/16)em
+
+    .application .application-inner
+        // reduce padding in the home icon
+        padding (6/16)em 12% (3/16)em
+
+        img.icon
+            // padding relative to the viewport
+            padding 18%
+
+
+    .md-content
+        overflow auto
+        height 100%
+
+    .md-modal
+        position fixed
+        top 36px
+        bottom 0
+        width 100%
+        max-width 100%
+        z-index 2000
+        visibility hidden
+        backface-visibility hidden
+        margin 0
+        padding 0
+
+        .md-content
+        .md-header
+        .md-footer
+            border-radius 0
+
+         .md-content
+             display flex
+             flex-direction column
+
+            .md-body
+                flex 1
+                // overwrite JS resizing
+                max-height 100% !important
+
+    .section-title
+        display none
+
+    .home-body
+        box-shadow none
+
+    h3
+        margin-top (20/16)em
+        margin-bottom 0
+        padding-bottom 0
+        line-height 16px
+
+    #buttons
+        width 100%
+        height 100%
+
+        .nav
+            margin 0
+            height 20px
+
+        .app-button
+            display none
+            height 60px
+
+        li
+            margin 0
+
+            a
+                margin 0
+                min-height 20px
+                height 20px
+
+    #market-view
+        h3
+            margin-bottom 10px
+
+    #config-applications-view
+        .w33
+            width 100%
+
+        .w66
+            width 100%
+
+        .config-applications
+            .buttons
+                display block
+
+
+        .change-layout, .disk-space, .memory-free, .stack-app
+            img
+                width 32px
+                margin 0px
+                margin-right 5px
+
+        .sys-infos .line
+            display inline-block
+            clear none
+
+        .sys-infos div
+            margin-top 5px
+
+        .platform .line
+            img
+                width 32px
+                margin 0px
+                margin-right 5px
+
+        .stack-app
+            .line
+                display block
+
+@media (max-width 640px)
+
+    #account-view
+        p
+            margin 10px 0
+
+    #home-content
+        padding 0
+
+    #no-app-message
+        width 100%
+
+    #market-view
+        padding 0
+
+        .right
+            img
+                display none
+
+    #config-applications-view
+        .w66
+            padding-right 10px
+
+
+@media (max-width 500px)
+
+    #config-applications-view
+        .mod.w25
+        .mod.w75
+        .mod.w33
+        .mod.w66
+        .mod.w40
+        .mod.w60
+        .mod.w50
+            width 100%
+
+        .mod.w60
+            margin-top (30/16)em
+
+    #home-menu
+        .logout-menu-icon
+            display block
+
+    #market-view
+        .app-text
+            padding 10px
+
+    #config-applications-view
+        .config-application
+            .mod.left
+                width 100%
+                margin-bottom 10px
+
+    #content
+        #home-menu
+            .menu-btn:hover
+                background none
+                background-color transparent
+
+                span
+                    display none
+
+    .application .application-inner .app-title
+        font-size (14/16)em
+
+
+span.app
+    font-weight bold
+
+button.btn
+    display inline-block
+    text-align center
+
+    .spinholder
+        margin auto
+        width 100%
+        height 100%
+        max-width 100%
+        max-height 100%
+
+        img
+            display block
+            width 100%
+            height 100%
+            max-width 100%
+            max-height 100%
+

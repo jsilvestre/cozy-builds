@@ -1,0 +1,42 @@
+.icon-container
+    img.spinner(src="/img/spinner-white-thin.svg")
+    img.icon(src="")
+.infos
+    .line
+        strong
+            a.app(href="#apps/#{app.slug}")= app.displayName
+        button.update-app.outline-blue(title="#{t('update')}")
+            i.fa.fa-refresh
+            span= t('update')
+    .line
+        if app.version
+            span #{app.version}
+        span &nbsp;-&nbsp;
+        if app.state === 'installed'
+            span.state-label= t('running')
+        else
+            span.state-label
+                | #{app.state}
+    .line
+        .comments
+            a(href="#{app.websiteUrl}", target="_blank")= app.website
+            span
+                | (#{app.branch})
+
+.buttons
+    if app.favorite
+        button.transparent-grey.favorite(title="#{t('config application unmark favorite')}")
+            i.fa.fa-star    
+    else
+        button.transparent-grey.favorite(title="#{t('config application mark favorite')}")
+            i.fa.fa-star-o    
+    a.transparent-grey.logs(href="/logs/#{app.slug}", target="_blank", title="#{t('show logs')}", role="button")
+        i.fa.fa-code
+    if app.state === "stopped"
+        button.transparent-grey.stopped.start-stop-btn(title="#{t('start this app')}")
+            i.fa.fa-power-off
+    else
+        button.transparent-grey.start-stop-btn(title="#{t('stop this app')}")
+            i.fa.fa-power-off
+    button.transparent-grey.remove-app(title="#{t('remove')}")
+        i.fa.fa-trash

@@ -1,0 +1,13 @@
+.md-content
+    .md-header.clearfix
+        .line
+            h3.left #{model.displayName}
+        if (model.comment !== 'official application')
+            .line.noncozy-warning
+                i.fa.fa-info-circle
+                span
+                    != t('warning unofficial app')
+    .md-body
+    .md-footer
+        button.btn.transparent-grey#cancelbtn= t('cancel')
+        button.btn#confirmbtn= t('install')

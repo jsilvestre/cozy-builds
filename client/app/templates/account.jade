@@ -1,0 +1,144 @@
+#account-form.lightgrey.pa2
+    .line
+        .mod.left.w50.pa2.personalisation
+            h4= t('account personalization')
+
+            p
+                p= t('account background selection')
+                .background-list.line.mb1
+                button#background-add-button.btn.w100= t('account background add')
+
+
+
+        .mod.left.w50.pa2
+            h4= t('account identifiers')
+
+            .input
+                p= t('alerts and password recovery email')
+                div.account-field.fied-with-btn
+                    input#account-email-field
+                    button.btn= t('save')
+                p.error.email.hide
+            .input
+                p= t('public name description')
+                div.account-field.fied-with-btn
+                    input#account-public-name-field
+                    button.btn= t('save')
+                p.error.public-name.hide
+            .input
+                p= t('domain name for urls and email')
+                div.account-field.fied-with-btn
+                    input#account-domain-field
+                    button.btn= t('save')
+                p.error.domain.hide
+
+
+            h4= t('account localization')
+
+            .input
+                p= t('account timezone field description')
+                div.account-field
+                    select#account-timezone-field
+
+            .input
+                p= t('account language field description')
+                div.account-field
+                    select#account-locale-field
+                        option(value="fr")= t('french')
+                        option(value="en")= t('english')
+                        option(value="de")= t('german')
+                        option(value="es")= t('spanish')
+                        option(value="ja")= t('japanese')
+                        option(value="ko")= t('korean')
+                        option(value="ru")= t('russian')
+
+            h4= t('account password')
+            #change-password-form
+                .account-field
+                    p
+                        label= t('input your current password')
+                    input#account-password0-field(type="password", placeholder="#{t('current password')}")
+
+                .account-field
+                    p
+                        label= t('enter a new password')
+                    input#account-password1-field(type="password", placeholder="#{t('new password')}")
+
+                .account-field
+                    p
+                        label= t('confirm new password')
+                    input#account-password2-field(type="password", placeholder="#{t('new password')}")
+
+                .account-field
+                    p
+                        button#account-form-button.full-width= t('save your new password')
+
+                    p.loading-indicator &nbsp;
+
+                    #account-info.alert.main-alert.alert-success.hide
+                        #account-info-text= t('account change password success')
+
+                    #account-error.alert.alert-error.main-alert.hide
+                        #account-form-error-text= t('account change password error')
+                        
+            h4= t('account two factors auth')
+            #2fa-form
+                .account-field
+                    p= t('account 2fa strategy')
+                    select#account-2fa-field
+                        option(value="totp")= t('account 2fa totp')
+                        option(value="hotp")= t('account 2fa hotp')
+
+                .account-field
+                    p
+                    button#account-2fa-button.full-width= t('enable 2fa')
+
+                    p.loading-indicator &nbsp;
+
+                    .account-2fa-info.alert.main-alert.alert-success.hide
+                        .account-info-text= t('account 2fa enabled')
+
+                    .account-2fa-error.alert.alert-error.main-alert.hide
+                        .account-form-error-text= t('account 2fa error')
+
+            #2fa-infos.account-field
+                p#2fa-strategy
+                
+                p.bold= t('account 2fa rectokens')
+                p#2fa-recovery-tokens.bold
+                p
+                    button#account-2fa-reset-tokens.full-width= t('reset 2fa tokens')
+            
+                p.full-width= t('account 2fa token explanation')
+                
+                p#2fa-token.token.bold.center &nbsp;
+                
+                p= t('account 2fa qrcode explanation')
+                    
+                p.center
+                    img#qrcode
+
+                #2fa-hotp-yubikey.hidden
+                    p= t('2fa if yubikey')
+                    p#2fa-raw-key.bold.center &nbsp;
+                
+                #2fa-hotp-reset.hidden
+                    p= t('account 2fa hotp reset explanation')
+                
+                    .account-field
+                        p
+                        button#account-2fa-reset-button.full-width= t('2fa reset hotp')
+                    
+                p= t('account 2fa disable explanation')
+                    
+                .account-field
+                    p
+                    button#account-2fa-off-button.full-width= t('disable 2fa')
+                    
+                    p.loading-indicator &nbsp;
+
+                    .account-2fa-info.alert.main-alert.alert-success.hide
+                        #account-info-text= t('account 2fa disabled')
+
+                    .account-2fa-error.alert.alert-error.main-alert.hide
+                        #account-form-error-text= t('account 2fa error')

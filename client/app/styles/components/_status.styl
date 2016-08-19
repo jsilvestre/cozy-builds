@@ -1,0 +1,295 @@
+.platform-section
+    .status-section
+        max-width (1600/16)em
+        margin auto
+
+        & > .mod
+            padding (20/16)em
+
+        section
+            margin-bottom (50/16)em
+
+// Status - Config application
+
+.title-app a.subtitle
+    display inline-block
+    font-size 15px
+
+.sys-infos
+   padding-right 20px
+
+.refresh
+    margin-right 1em
+
+.config-application:first-child
+    border-top 0
+
+.config-application
+    display flex
+    justify-content space-between
+    border-top 1px solid grey-03
+    padding (15/16)em 0
+
+    strong
+        text-transform capitalize
+        font-size (20/16)em
+
+        a
+            color grey-08
+
+    .smaller
+        display flex
+        align-items center
+
+        input
+            margin 0 5px 0
+
+    .favorite
+        cursor pointer
+
+    .md-header
+        background transparent
+
+    .md-footer
+        padding 0
+
+        .btn
+            font-weight normal
+
+    .buttons
+        flex none
+
+        button
+        [role=button]
+            padding 0.25em 0.5em
+
+            .fa-star
+                color gold
+
+            &:hover
+                color white
+
+                &.favorite
+                    background-color gold
+
+                    .fa-star
+                        color white
+
+                &.logs
+                    background-color joker
+
+                &.start-stop-btn
+                    background-color tomato-dry
+
+                &.start-stop-btn.stopped
+                    background-color green
+
+                &.remove-app
+                    background-color red
+
+            .fa
+                margin 0
+
+    .icon-container
+        flex none
+        margin-right 1em
+
+        .icon
+        .spinner
+            border-radius 30em
+            padding 0.8em
+            width (72/16)em
+            box-shadow 0 2px 6px rgba(0,0,0,.16)
+
+            @media (max-width (500/16)em)
+                width (52/16)em
+                padding 0.5em
+
+        .spinner
+            padding 0
+
+            @media (max-width (500/16)em)
+                padding 0
+
+    .infos
+        flex 1
+
+
+
+    #update-all
+    button.update-app
+        padding (3/13)em (6/13)em
+        margin-left (10/13)em
+        font-size (13/16)em
+
+
+    .comments
+        font-size (14/16)em
+        line-height (20/14)em
+        color grey-05
+
+        img
+            overflow hidden
+            display inline-block
+            margin 0 5px 0 0
+
+        a
+            color grey-05
+
+            &:hover
+                color blue
+
+        span
+            margin-left 0.25em
+            font-style italic
+
+    .to-update-label
+        padding (3/12)em (6/12)em
+        background-color green
+        border-radius 3px
+        color white
+        font-size (12/16)em
+        text-transform lowercase
+
+
+#config-applications-view
+    .w60
+        position relative
+        padding (20/16)em
+
+
+// CONNECTED DEVICES
+.config-device
+    display flex
+    align-items center
+    justify-content space-between
+
+    &:not(:last-child)
+        border-bottom 1px solid grey-03
+
+    button
+        padding 0.25em 0.5em
+
+    span
+        font-size (14/16)em
+
+    @media (max-width (500/16)em)
+        button
+            i
+                margin 0
+
+            span
+                display none
+
+.no-device
+    a
+        display inline-block
+
+        &[role=button]
+            background-color green
+            &:hover
+                background-color green - 10%
+
+        &.linux
+            color grey-07
+            background-color grey-01
+            &:hover
+                background-color grey-01 - 10%
+            img
+                margin-right .5em
+
+        &[role=button]
+            padding .5em .875em
+            margin (5/16)em (10/16)em (5/16)em 0
+
+            img
+                @media (max-width: 800px)
+                    margin 0
+
+
+// HARDWARE
+.block-container
+    display flex
+    align-items center
+    justify-content space-between
+
+    @media (max-width (1280/16)em)
+        flex-wrap wrap
+
+    .icon-hard-drive::before
+        @extend $icon-hard-drive
+        @extend $icon-48
+        margin-right 0.75em
+
+    .icon-speed-counter::before
+        @extend $icon-speed-counter
+        @extend $icon-48
+        margin-right 0.75em
+
+.info-block
+    display flex
+    align-items center
+    width 49%
+
+    @media (max-width (1280/16)em)
+        width 100%
+        margin-bottom 1em
+
+
+    .title
+        font-size (14/16)em
+        text-transform uppercase
+        color grey-06
+
+    .lowlight
+        display inline-block
+
+    .fa
+        margin-right (10/48)em
+        font-size (48/16)em
+
+// PLATFORM
+.platform
+    position relative
+
+    .buttons
+        display flex
+        position absolute
+        top 0
+        right 0
+
+        @media (max-width (500/16)em)
+            button
+                span
+                    display none
+
+                 .fa
+                     margin 0
+
+        button:not(:last-child)
+            margin-right (4/14)em
+
+    .version
+        display flex
+        justify-content space-between
+
+        @media (max-width (500/16)em)
+            flex-wrap wrap
+
+        .line
+            @media (max-width (500/16)em)
+                width 50%
+                margin-bottom 1em
+
+            .app
+                font-size (14/16)em
+                text-transform uppercase
+                font-weight normal
+                color grey-06
+
+            span
+                display block
+
+            .version-number
+                font-size 1.75em
+                line-height 1em

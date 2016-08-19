@@ -1,0 +1,23 @@
+
+.app-img
+    if app.svgSpriteSlug
+        img(class=app.svgSpriteSlug)
+    else
+        img(src="#{app.icon}")
+    span.installing-label= t("market app install")
+
+.app-text
+    h3 #{app.displayName}
+        if app.beta
+            span.beta Beta
+    span.comment= t(app.comment)
+    p= t(app.description)
+    .btn-group
+        button.outline-blue.small= t("install")
+        a.transparent-grey.small.website(href="#{app.git}", target="_blank", role="button")
+            .fa.fa-github
+            span= t("github")
+        if app.website !== undefined
+            a.transparent-grey.small.website(href="#{app.website}", target="_blank", role="button")
+                .fa.fa-link
+                span= t("website")
