@@ -1,0 +1,60 @@
+sudo: false
+language: node_js
+matrix:
+    fast_finish: true
+    allow_failures:
+        - node_js: 5
+branches:
+  except:
+    - demo
+node_js:
+    - 0.10
+    - 0.12
+    - 4
+    - 5
+services:
+    - couchdb
+cache:
+    directories:
+        - node_modules
+env:
+    global:
+        - NODE_ENV=test
+        - CXX=g++-4.8
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - gcc-4.8
+            - g++-4.8
+            - netstat
+
+before_install:
+    - travis_retry pip install --user transifex-client
+    - travis_retry npm install npm@latest-2 -g
+    - travis_retry npm install forever coffee-script brunch -g
+    - travis_retry git clone git://github.com/cozy/cozy-data-system.git
+    - cd cozy-data-system
+    - travis_retry npm install # data-system
+    - pwd
+    - NAME=data-system TOKEN=token forever start -o forever-ds.log build/server.js
+    - ps aux | grep server.js
+    - sleep 5
+    - curl http://localhost:9101/
+    - cd ..
+    - export NAME=proxy
+    - export TOKEN=token
+
+script:
+    - npm run build
+    - npm run test:build
+
+after_failure:
+    - pwd
+    - ps aux | grep server.js
+    - netstat -lntp
+    - cat ~/cozy-data-system/forever-ds.log
+    - cat ~/cozy-proxy/forever-proxy.log
+    - curl http://localhost:9101/
+    - curl http://localhost:9104/

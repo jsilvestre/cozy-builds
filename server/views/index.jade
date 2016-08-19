@@ -1,0 +1,22 @@
+extends layouts/_base
+
+block title
+    title= t('index title')
+    meta(name="description", content=t('index description'))
+
+
+block content
+    main(role='application')
+      noscript
+        section.popup
+          header
+            a(title='Cozy Website', href='https://cozy.io')
+          .container
+            h1= t('index noscript title')
+            p.help= t('index noscript message')
+
+block js
+    if env
+        script.
+            ENV = !{JSON.stringify(env)};
+    script(src="/#{assets.js}" defer=true)
