@@ -1,0 +1,14 @@
+/client
+/server
+/tests
+server.coffee
+
+doc
+
+node_modules
+
+coffeelint.json
+.editorconfig
+.git*
+.travis.yml
+.tx

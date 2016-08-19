@@ -1,0 +1,402 @@
+/*
+ * Message list
+ *
+ * -- Message list bar internal layout and styles
+ */
+
+.list-loading
+    padding    1.5rem
+    color      grey-05
+    text-align center
+
+.list-empty
+    margin 1em
+    font-size 1em
+
+
+.messages-list
+    display          flex
+    flex-direction   column
+    background-color white
+
+
+    button
+        background transparent
+        border     none
+
+
+    .drawer-toggle
+        float left
+
+    .mailbox-loading
+        padding 0.75em 1em
+        max-height 4em
+        flex 1 0 4em
+        border-bottom 1px solid grey-03
+
+        img
+            display block
+            float left
+            width 2em
+            height 2em
+            top 3px
+
+        strong
+            font-size 1.125em
+
+        p
+            font-size .875em
+            margin 0
+
+
+    // TOOLBAR (filters / search / actions)
+    // -------------------------------------------------------------------------
+    [role=toolbar]
+        display    flex
+        min-height (36/16)em
+        padding          .1875em .7em (1/16)em
+        background-color grey-01
+        font-size        .90em
+
+        .fa
+            color darkcolor
+
+        .caret
+            margin-left .45em
+
+        button i
+            vertical-align baseline
+
+        [role=group]
+        .dropdown
+        .menu-action
+            display flex
+
+        [role=group]
+            margin-left 2em
+
+        .dropdown-toggle
+            white-space nowrap
+
+
+    .search-bar
+        flex   1
+
+    .filters
+        .btn-label
+            padding-left .45em
+            display      none
+
+
+        [role=menuitem]
+            margin-right .8em
+            min-width 2em
+
+            &[aria-selected=true]
+                background-color grey-06
+                color white
+                border-radius 200px
+
+                .fa
+                    color white
+
+        @media(min-width: 50em)
+            .full & [role=menuitem]
+                i
+                    padding-left 0
+
+                .btn-label
+                    display inline
+
+
+        > [role=presentation]
+                display none
+
+        @media(max-width: 37.5em)
+            > [role=presentation]
+                display block
+                cursor  pointer
+
+            [role=menuitem]
+                display none
+
+            &[aria-expanded=true]
+                > [role=presentation]
+                    background-color basecolor
+
+                    .fa
+                        color white
+
+                [role=menuitem]
+                    display block
+
+            &[aria-expanded=false]
+                margin-right 1px
+
+
+    // LOADING PROGRESS
+    // -------------------------------------------------------------------------
+    .progress
+        border-radius 0
+        margin 0
+        height (3/16)em
+        min-height (3/16)em
+        background-image none
+        background-color grey-01
+        box-shadow 0 0
+        border-bottom 1px solid grey-03
+
+
+    // LIST ITEMS
+    // -------------------------------------------------------------------------
+    .main-content
+        flex             1
+        overflow-y       auto
+        padding          0 0 .5em 0
+
+        // `end of the road`
+        > p
+            text-align center
+            font-size .875em
+
+
+    .ellipsable
+        min-width 0
+
+        p
+            text-overflow ellipsis
+            overflow      hidden
+            white-space   nowrap
+
+
+    .message
+        position relative
+        display          table
+        table-layout     fixed
+        width            100%
+        padding          .5em .4em .75em
+        background-color lighten(lightcolor,60%)
+        border-bottom    1px solid grey-02
+
+        main:not(.full) &.active
+            background-color lighten(basecolor,87%)
+            box-shadow inset 0 0 0 1px lighten(basecolor,67%)
+
+            .preview
+                color darkcolor
+
+        .fa-new-icon
+            position absolute
+            border-left solid 0.25em blue
+            height 100%
+            top 0
+            left 0
+
+    .unseen
+        background-color white
+
+        .participants
+            .address-list
+                font-weight bold
+
+
+    .wrapper
+        display         table-row
+        color           darkcolor
+        text-decoration none
+
+        [class*=wrapper]
+            display        table-cell
+            vertical-align middle
+
+        p
+            margin 0
+
+
+    .markers-wrapper
+        marker-width = 1em
+
+        width 2em + marker-width
+        padding 0em 0.3em 0
+
+        i
+            font-size marker-width
+            padding 0 0 0 0.2em
+
+        .fa-circle
+            color basecolor
+
+
+    .avatar-wrapper
+        width min-content
+
+
+    .avatar
+        display         flex
+        align-items     center
+        justify-content center
+        border-radius   50%
+        font-size       1.5em
+        font-style      normal
+        font-weight     bold
+        text-transform  uppercase
+        color           white
+        opacity         .7
+
+
+    .metas
+        display         flex
+        flex-wrap       wrap
+        align-items     baseline
+        justify-content space-between
+
+
+    .subject
+        font-size (15/16)em
+
+    .preview
+        color     grey-06
+        font-size .875em
+
+    .mailbox-tag
+        font-size        .8em
+        display          inline-block
+        margin-right     .5em
+        background-color rgba(grey-02, .67)
+        border-radius    .1em
+        padding          .1em .35em
+        color            darkcolor
+
+
+    .date
+    .extras
+        white-space nowrap
+
+    .date
+        color     grey-04
+        font-size .875em
+
+    .extras
+        i
+            margin-left .75em
+
+    .conversation-length
+        padding          0 .5em
+        margin-left      .2em
+        border-radius    100em
+        background-color grey-04
+        color            white
+        font-size        (13/16)em
+
+    .fa-star
+        color lightorange
+
+
+    .hlt-search
+        background-color lighten(basecolor-alpha, 10)
+
+    .preview .hlt-search
+        color darkcolor
+
+
+    // UI ACTIONS
+    // -------------------------------------------------------------------------
+    .message
+        .select
+            cursor  pointer
+
+        .fa-square-o
+            color grey-03
+
+        .fa-check-square-o
+            color grey-07
+
+
+    // LAYOUT SPECIFIC RULES
+    // -------------------------------------------------------------------------
+    .layout-column &
+        .avatar-wrapper
+            width 3.5em
+
+        .avatar
+            width  2em
+            height 2em
+
+        .participants
+        .subject
+            flex 1 0 50%
+
+        .mailboxes
+        .preview
+            flex-basis 100%
+
+        .participants
+            order 1
+
+        .subject
+            order 3
+
+        .preview
+            order 6
+
+        .date
+            order 2
+
+        .mailboxes
+            order 5
+
+        .extras
+            order 4
+
+
+    .layout-column.layout-compact &
+        .preview
+            display none
+
+
+    .layout-column.layout-compact &
+    .layout-row &
+        .mailboxes
+            display none
+
+        .avatar-wrapper
+            width 3.25em
+
+        .avatar
+            width  1.25em
+            height 1.25em
+
+
+    .layout-row &
+        .metas-wrapper
+            flex-wrap nowrap
+
+        .metas
+            flex-wrap nowrap
+
+            > div
+                margin 0 .25em
+
+                &:first-child
+                    margin-left 0
+                &:last-child
+                    margin-right 0
+
+        .participants
+            flex 1 0 20%
+            font-size (14/16)em
+
+        .subject
+            flex  1 0 30%
+            order 2
+            font-size (14/16)em
+
+        .preview
+            flex-basis 1 1 100%
+            order      3
+
+        .extras
+            order 4
+
+        .date
+            order 5
