@@ -1,0 +1,49 @@
+.duplicates
+    [role=contentinfo]
+        flex-wrap wrap
+        align-items baseline
+
+        padding 30px
+
+
+    [role=grid]
+    .empty
+        flex 1 0 100%
+        top-spaced 1em
+
+
+    h1
+        flex 1 1 50%
+        reset()
+        font-weight bold
+        font-size 20px
+
+
+    [role=rowgroup]
+    .merged
+        border 1px solid grey-02
+
+        &:not(:last-child)
+            bottom-spaced (20px)
+
+
+    [role=rowgroup]
+        li[role=presentation]:last-child [role=row]
+            border none
+
+
+    [role=columnheader]
+        display flex
+        align-items center
+        justify-content space-between
+        padded 10px 1em
+
+        border-bottom 1px solid grey-02
+
+        button:not(:last-child)
+            right-spaced em(4px)
+
+
+    [role=row]
+        [type=checkbox]
+            right-spaced em(10px)

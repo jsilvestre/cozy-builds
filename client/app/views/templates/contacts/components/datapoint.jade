@@ -1,0 +1,7 @@
+include /views/templates/contacts/helpers.jade
+
+if edit
+    +groupInput(point, name, index)(placeholder=true)
+
+else
+    +formatPoint(point)

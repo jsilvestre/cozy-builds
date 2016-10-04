@@ -1,0 +1,93 @@
+avatar(size)
+    @extend $content-center
+
+    width         em(size)
+    height        em(size)
+    flex-shrink 0
+
+    right-spaced  .5em
+    border-radius 50%
+
+    &.initials
+        background-color grey-03
+        color white
+
+
+[role=application]
+    @extend $app-2panes-toolbar
+
+    aside.drawer
+        flex-basis (260/16)rem
+
+    &[aria-busy=true] main
+        position relative
+
+        &::before
+            content ''
+            display block
+            position absolute
+            z-index 99
+            top 0
+            bottom 0
+            left 0
+            right 0
+            background-color grey-01
+            opacity .8
+
+        &::after
+            @extend $icon-spinner-grey
+            @extend $icon-36
+            z-index 1000
+            top 5em
+
+
+[role=contentinfo]
+    dl
+    dd
+        reset()
+
+
+.dialogs
+    [role=dialog]
+        @extend $dialog
+
+    [role=contentinfo]
+        max-width 100%
+
+        @media (max-width: (800/basefont)rem)
+            height auto !important
+            min-height 90vh !important
+
+    .card
+    .duplicates
+        [role=contentinfo]
+            transition-property transform opacity
+            transition-duration 300ms
+            transition-timing-function ease-out
+            transition-delay 80ms
+
+
+        &[aria-busy=true] [role=contentinfo]
+            transform translateY(30%) scale(0.95)
+            transform-origin center bottom
+            opacity 0.8
+
+            transition-delay none
+
+
+[role=alertdialog]
+    @extend $alertdialog
+
+    h2
+        top-spaced 0
+
+    p
+        bottom-spaced em(30px)
+
+
+[aria-haspopup=true]
+    @extend $dropdown
+
+
+[role=listbox]
+    @extend $selectbox

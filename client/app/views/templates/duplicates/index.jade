@@ -1,0 +1,10 @@
+extends /lib/views/templates/base/dialog.jade
+
+block content
+    h1= t('duplicates title')
+
+    if size > 0
+        div(role="grid")
+
+    else
+        p.empty= t("duplicates empty")

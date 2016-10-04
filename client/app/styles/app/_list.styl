@@ -1,0 +1,82 @@
+[role=grid]
+    .empty
+        hide()
+
+
+    [role=columnheader]
+        left-padded 1.5em
+
+
+    [role=row]
+        display flex
+        align-items center
+
+        horizontally-spaced 1em
+
+        text-decoration none
+
+        &:not(:empty)
+            vertically-padded .3em
+
+            &:not(:first-child)
+                border-top 1px solid grey-02
+
+
+    [role=gridcell]
+        flex 3
+        min-width 0
+        horizontally-spaced .5em
+
+        color grey-05
+
+
+        dt
+            display flex
+
+        .value
+            min-width 0
+            overflow hidden
+            text-overflow ellipsis
+
+
+    .name
+        flex 4
+        display flex
+        align-items center
+
+        color grey-08
+        text-decoration none
+
+        @media (max-width: (600/basefont)rem)
+            margin-left 0
+
+    .tel
+        @media (max-width: (460/basefont)rem)
+            display none
+
+    .email
+        @media (max-width: (600/basefont)rem)
+            display none
+
+
+    .avatar
+        avatar(50px)
+        background-color grey-02
+
+
+    [aria-haspopup]
+        dt
+            .type
+                hide()
+
+        dd
+            padded .5em 1em
+
+        li
+            display flex
+            align-items center
+            vertically-spaced .25em
+
+        .type
+            font-size .8em
+            color grey-05

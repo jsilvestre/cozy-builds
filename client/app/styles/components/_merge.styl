@@ -1,0 +1,57 @@
+.merge
+
+    &[aria-busy=true] [role=contentinfo]
+        transform translateY(0)
+
+    [role=contentinfo]
+        flex-basis (560/basefont)rem
+
+    h1
+        bottom-spaced .5em
+        font-size     20px
+
+    dl
+        bottom-spaced 2em
+
+    dt
+        top-spaced  .5em
+        color       grey-05
+        line-height 1.5em
+
+    ul
+        reset()
+        list-style-type none
+
+    li
+        line-height 1.8em
+
+    dd
+        &:not(:last-child)
+            bottom-padded .5em
+            border-bottom 1px solid grey-02
+
+        label
+            cursor      pointer
+
+        [data-input=radio]
+            right-spaced .5em
+
+    .avatars
+        display flex
+
+        input
+            hide()
+
+        li
+            flex              1
+            vertically-padded .5em
+            @extend           $content-center
+
+        img
+            font-size 32px
+            avatar    128px
+            reset()
+            border 5px solid white
+
+        input:checked + img
+            border 5px solid blue
