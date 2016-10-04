@@ -1,0 +1,9 @@
+div.popover-back
+    a(tabindex="0")
+        button.btn.btn-back
+            i.fa.fa-angle-left
+    h4= title
+    .btn-done-placeholder
+        if !readOnly
+            a(tabindex="0")
+                button.btn.btn-done=t('screen title done button')

@@ -1,0 +1,403 @@
+/**
+ * Vars
+ */
+overlay-color = #F5F5F5
+opacity-color = #C5C5C5
+icon-color    = #333
+input-color   = #555
+
+//
+// Styles for the fullcalendar plugin
+// ----------------------------------------------------------------------------
+
+.fc button
+    font-size (13/16)rem
+
+.fc-ltr
+    padding 0
+
+.fc-view-container
+    clear:none
+    padding 0.5em 1em
+
+    thead
+        tr
+            th
+                height: 30px
+                line-height: 30px
+                border: none
+
+                &:first-child
+                    border-radius: 10px 0 0 0
+
+                &:last-child
+                    border-radius: 0 10px 0 0
+
+    tbody
+        .fc-state-highlight
+            background: lightblue
+
+    .fc-content .fc-time.spinning
+        display: inline-block
+        margin: 3px
+
+    .fc-title
+        font-weight: 700
+
+
+.fc-cell-overlay
+    background: green
+
+
+//
+// HEADER
+.fc-header
+    box-sizing border-box
+    display flex
+    align-items center
+    width 100%
+    background-color grey-01
+    border-bottom 1px solid grey-03
+
+    .btn-group > .btn
+        font-weight normal
+        border 1px solid grey-04
+        background-color grey-01
+        color grey-07
+        text-transform capitalize
+
+        .fa
+            font-size 1.2em
+
+        &:active
+            box-shadow none
+
+        &:hover
+            background-color grey-03
+
+        &.fc-state-active
+            font-weight bold
+            background-color grey-04
+            color white
+
+            &:hover
+                text-decoration none
+                cursor default
+
+        &.title
+            min-width 8em
+            font-weight bold
+            font-size 1rem
+
+            &:hover
+                background-color grey-03
+                color grey-07
+
+    .fc-button
+        margin-left 0.625em
+        font-weight normal
+        border 1px solid grey-04
+        background-color transparent
+        color grey-07
+
+        &:hover
+            background-color grey-03
+
+        &.fc-state-active
+            background-color grey-04
+            color white
+
+.fc-button-wrapper
+    display: inline-block
+
+.fc-header-left
+.fc-header-right
+    flex-grow 1
+    width 33.33%
+    padding .5rem 1rem
+
+.fc-header-right
+    text-align: right
+
+.fc-header-name
+    display none
+
+.fc-header-title h2
+    margin 0
+    font-size 1.5em
+    line-height 1em
+    font-weight bold
+    white-space nowrap
+    display inline
+    text-transform capitalize
+
+.fc-button
+    position: relative
+    display: inline-block
+    padding: 0 0.6em
+    overflow: hidden
+    height: 1.9em
+    line-height: 1.9em
+    white-space: nowrap
+    cursor: pointer
+
+    .fa
+        font-size: 2em
+
+
+
+.fc-title,
+.fc-view-container
+    thead
+    thead > tr.fc-first
+    .fc-day-header
+    .fc-widget-header
+        font-family: 'Source Sans Pro', sans-serif
+        border-radius: 0
+        color: #555
+        cursor: default
+        font-weight: normal
+
+.fc-agenda-axis
+    background: white
+    color: darkgrey
+
+    &.fc-first
+        background: white
+        border-radius: 0
+        color: white
+
+.fc-day-number
+    font-family: 'Source Sans Pro', sans-serif
+
+.fc-bg .fc-other-month
+    background-color grey-01 + 50%
+
+.fc-content
+    border: 0
+    border-radius: 0
+    color: white
+    font-family: 'Source Sans Pro', sans-serif
+    padding: 1px
+
+    i
+        margin-top: 2px
+        margin-right: 5px
+
+.event-remove
+    cursor: pointer
+
+.fc-widget-content
+.fc-cell-overlay
+    cursor: pointer
+
+.fc-view
+    overflow: visible
+
+#view-container .fc-view-container
+    .fc-cell-overlay
+        background: grey-03
+
+    tbody .fc-state-highlight
+        background: blue + 92%
+
+    .fc-day.fc-today.fc-state-highlight
+        color blue
+        background-color blue + 95%
+        box-shadow inset 0 0 0 2px blue + 33%
+
+    .fc-day-number.fc-today.fc-state-highlight
+        padding-right .375em
+        color blue
+        background transparent
+
+.fc-basic-view td.fc-day-number
+    padding .375em .5em
+
+.fc-event
+    border-radius 2px
+    transition all .2s ease-out
+
+    &:hover
+        box-shadow 0 0 0 3px white, 0 0 0 6px rgba(51,166,255,.67)
+        z-index 1000
+
+.fc-highlight
+    background-color blue + 80%
+    opacity 1
+
+.fc-day-grid-event
+    margin .1875em .1875em 0
+
+td.fc-widget-header
+    border-style: none
+
+.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td
+    border-color: grey-03
+
+#alarms
+    height 100%
+
+    thead
+        .fc-first
+            .fc-day-header
+            .fc-widget-header
+                border-bottom: 1px solid grey-03
+
+a.btn:visited
+    color: white
+
+#add-alarm
+
+    input
+    select
+        border: 1px solid grey-03
+        box-shadow: 0
+        border-radius: 0px
+        shadow: none
+
+    input.disabled
+        border: 1px solid transparent
+
+    input:hover
+    select:hover
+        border: 1px solid darkblue
+        border-radius: 0px
+        shadow: inset 1px 1px 2px rgba(100, 100, 100, 0.1)
+        color: darkcolor
+
+    input:focus
+    input:active
+    select:active
+    select:focus
+        border: 1px solid blue
+        box-shadow: none
+
+    .add-on
+        border-radius: 0
+
+    .datepicker td.day:hover
+        background: lightblue
+
+    .bootstrap-timepicker-widget table td a:hover
+        background: lightblue
+        border: 1px solid transparent
+
+    #alarm-description-input
+        font-size: 24px
+        line-height: 40px
+        height: 40px
+
+    button.add-alarm.disabled
+      border: 1px solid grey
+
+    button.add-alarm
+        float: left
+        margin-top: 10px
+
+    button.cancel
+        margin-left: 5px
+        margin-top: 10px
+
+// list view
+.dayprogram
+    margin-bottom 3em
+
+    h4
+        color grey-05
+        font-size 1em
+        line-height 1em
+        font-weight normal
+        text-transform uppercase
+
+    .alarms
+        .scheduleElement
+            display flex
+            align-items center
+            margin-bottom 0.5em
+            font-size 1.1em
+            line-height 1.2em
+
+            i
+                display none
+                padding: 0 0.5em
+                color grey-05
+                cursor pointer
+
+                &:hover
+                    color darkblue
+                    text-decoration underline
+
+            &:hover i
+                display inline-block
+
+        .fc-time
+            margin-right 0.5em
+            padding 0.3em 0.5em
+            border-radius 3px
+            color white
+            font-size 0.85em
+            flex none
+            align-self stretch
+            vertical-align bottom
+
+        .fc-title
+            font-style italic
+
+.dayprogram:nth-last-child(1)
+  border-bottom: 0
+  padding-bottom: 0
+
+.public-event-container
+  margin        auto
+  width         100%
+  max-width     40em
+  padding       1.5em
+  border        1px solid grey-03
+  border-top    0
+  border-radius 0 0 8px 8px
+
+  @media (max-width: 480px)
+    border 0
+    border-radius 0
+
+  h2
+  h3
+  h4
+  p
+  a
+  body
+      font-family: 'Source Sans Pro', sans-serif
+
+  h3
+      margin-top: 0
+
+//special style for invitation page
+.public-event-body
+  header
+    width             100%
+    max-width         40em
+    margin:           5em auto 0
+    padding:          1em 1.5em
+    background-color: white
+    border:           1px solid grey-03
+    border-radius:    8px 8px 0 0
+    text-align:       center
+
+    @media (max-width: 480px)
+      margin 0
+      border 0
+      border-radius 0
+
+    img
+      width: 68px
+
+// To hide Todo a dia label
+.fc-view-container
+    .fc-day-grid
+        tr:first-child
+            td.fc-axis.fc-widget-content:first-child
+                span
+                    display none
+
+@import '_pending_event_sharings_button'

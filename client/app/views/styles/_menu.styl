@@ -1,0 +1,188 @@
+aside.drawer
+    overflow-y auto
+    flex-basis 16.25rem
+    box-sizing border-box
+    margin 0
+    border-right 1px solid grey-03
+    font-family 'Source Sans Pro', sans-serif
+
+    .btn
+        padding .5rem 1rem
+        background grey-05
+        color white
+        font-size .875rem
+        &:hover
+            background grey-06
+        &:last-child
+            flex none
+            margin-bottom .5rem
+            margin-top 1rem
+            text-align left
+
+    i
+        margin-right .5em
+        font-size 1rem
+
+    .calendars
+        position relative
+        display: block
+        margin: 0
+        padding: 0.5em 0
+        cursor: pointer
+
+        .title
+            display flex
+            justify-content space-between
+            align-items center
+            font-size 1.5em
+            color darkcolor
+
+    .calendar-add
+        display flex
+        padding 0 .25em
+        cursor pointer
+        text-transform uppercase
+
+        .main-spinner img
+            width 1rem
+
+        span:last-child
+            margin-left .75rem
+            font-size (14/16)em
+
+    .spinner
+        flex none
+        position absolute
+        top 50%
+        right 0
+        margin-top -0.5rem
+        height 1rem
+        width 1rem
+
+    #multiple-actions
+        padding 15px
+
+        i
+            cursor pointer
+            margin-right 1em
+
+            &.remove-cals
+                &.hidden
+                    opacity 0
+
+        &.hidden
+            opacity 0
+
+    section.calendar-list
+        flex 1
+
+    ul#menuitems
+        margin-left 0
+        list-style none
+
+        li.tagmenuitem
+            display flex
+            position relative
+            align-items center
+            margin-left 0
+            padding .5rem .125rem
+            border-radius 3px
+
+            &:hover
+                cursor pointer
+                background-color grey-02
+
+            .calendar-actions
+                opacity 0
+                margin 0 .5em
+                &:checked
+                    opacity 1
+            i
+                margin 0
+
+            .badge
+                flex none
+                display inline-block
+                width 1rem
+                height 1rem
+                padding 0
+                margin-right .8em
+                border-radius 100%
+
+            .calendar-name
+                width 95%
+                padding-right 1em
+                font-size 1em
+                color grey-07
+                word-break break-word
+
+            input.calendar-name
+                width 100px
+                margin-bottom 0
+                border-radius 0
+                padding 2px 5px
+                box-shadow none
+
+            .dropdown
+                display flex
+                align-items center
+
+                .dropdown-toggle
+                    .caret
+                        margin-top 0 !important // overrides bootstrap
+                        vertical-align middle
+                        margin-right 4px
+                        border-top-color grey-04
+                        border-bottom-color grey-04
+                        transform scale(1.5, 1.5)
+                        transition all 0.2s
+
+                        &:hover
+                            border-top-color blue
+                            border-bottom-color blue
+
+
+                .dropdown-menu
+                    padding 0.4em 0
+                    width 13em
+                    border-color grey-03
+                    box-shadow 0 5px 16px rgba(0,0,0,0.19)
+                    left auto
+                    right -.5em
+
+
+                    & > li
+                        margin 0
+                        padding 0
+
+                        a
+                            padding 0.4em 1em
+                            margin-bottom 0.2em
+
+                            &:hover
+                                background blue
+
+
+            &:hover
+                .calendar-actions
+                    opacity 1
+                .dropdown .dropdown-toggle .caret
+                    display inline-block
+
+                    &:hover
+                        opacity 1
+
+
+.color-picker
+    margin 0 1em
+    list-style none
+
+    li
+        display inline-block
+        width (20/16)rem
+        height (20/16)rem
+        list-style none
+        border 2px solid white
+
+        &:hover
+            border-color grey-08
