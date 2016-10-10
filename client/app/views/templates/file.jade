@@ -1,0 +1,47 @@
+div.extensible-column(role="gridcell")
+
+  block file-path
+    //- displayed only on search mode
+    a.file-path(style="display:none")
+
+  div.caption-wrapper
+
+    block title
+
+      .caption(data-file-url="#{attachmentUrl}")
+        a.link-wrapper.btn-link
+          div.spinholder(style="display: none")
+            img(src="images/spinner.svg")
+          //- type-folder or type-file or type-thumb or type-image or ... 
+          i.icon-type 
+            img.thumb
+            span.fa.fa-globe
+          //- the name of the file 
+          span.file-name
+
+
+
+    block tags
+      ul.tags
+
+    block empty
+      .block-empty
+
+    block actions
+      .operations
+        a.file-tags(title="#{t('tooltip tag')}")
+          span.fa.fa-tag
+        a.file-share(title="#{t('tooltip share')}")
+          span.fa.fa-share-alt
+        a.file-edit(title="#{t('tooltip edit')}")
+          span.fa.fa-pencil-square-o
+        a.file-download(
+            href="#{downloadUrl}",
+            target="_blank", title="#{t('tooltip download')}")
+          span.fa.fa-download
+
+div.size-column-cell(role="gridcell")
+
+div.type-column-cell(role="gridcell")
+
+div.date-column-cell(role="gridcell")

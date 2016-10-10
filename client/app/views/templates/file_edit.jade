@@ -1,0 +1,24 @@
+extends file
+
+block title
+
+  .caption
+    a.link-wrapper.btn-link
+      
+      div.spinholder(style="display: none")
+        img(src="images/spinner.svg")
+
+      i(class="#{iconClass}")
+        img.thumb(src="#{thumbSrc}")
+        span.fa.fa-globe
+          
+  input.caption.file-edit-name(value=model.name)
+
+  a.btn.btn-sm.btn-cozy.file-edit-save
+    | #{t("file edit save")}
+
+  a.btn.btn-sm.btn-link.file-edit-cancel
+    | #{t("file edit cancel")}
+
+block actions
+  // empty!
